@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  web:
+    image: flieber-mutant-finder
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: flieber-mutant-finder
+    ports:
+      - "8000:8000"
+
+  redis:
+    image: redis
+    container_name: redis
+    ports:
+      - "6379:6379"

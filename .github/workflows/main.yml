@@ -1,0 +1,27 @@
+name: Tests
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+jobs:
+  Tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.9
+
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Test with pytest (unit tests)
+        run: pytest tests -r chars -vp no:warnings --cov=mutants --cov-report=term-missing:skip-covered --cov-report=xml:coverage.xml
