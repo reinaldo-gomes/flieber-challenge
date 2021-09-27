@@ -23,7 +23,7 @@ Also, install requirements in order to be able to execute app/tests outside the 
 Running the API outside the container requires that you install redis on your own.<br/>
 You will also have to change redis server name (api.py, line 16) from "redis" to whatever IP your installation is pointing to.
 
-As a conveniency, a link to a running instance has been provided at AWS:<br/>
+A link to a running instance has been provided at AWS:<br/>
 <http://ec2-3-144-85-40.us-east-2.compute.amazonaws.com:8000/docs>
 
 ## Features
